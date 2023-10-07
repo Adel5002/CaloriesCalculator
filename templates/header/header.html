@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+        <header style="background: rgba(0, 0, 0, 0.5);">
+            <nav class="main-pg navbar navbar-expand-lg">
+                <div class="container">
+                    <a href="{% url 'main' %}" style="color: white;" class="navbar-brand">X-YRO 2005</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                        aria-controls="navbarContent" aria-expanded="false">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-r  collapse navbar-collapse" id="navbarContent">
+                        <ul class="navbar-nav  ms-auto mb-2">
+                            <li class="nav-item">
+                                <a href="{% url 'main' %}" style="color: white;" class="nav-link">Домашняя</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'about-me' %}" style="color: white;" class="nav-link">Обо мне</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://t.me/xyro2005" style="color: white;" class="nav-link">Сайты на заказ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+{% endblock %}

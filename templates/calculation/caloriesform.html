@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1 class="mt-5 mb-5 text-center">Введите свои данные</h1>
+        <div class="col-sm-5 mx-auto">
+            <form class="Calc-form" action="" method="post">
+            {% csrf_token %}
+                    <div class="text-center"><label class="form-label" for="{{ form.weight.id_for_label }}">{{ form.weight.label }}</label></div>
+                        <input class="form-control text-center mb-3" type="{{ form.weight.field.widget.input_type }}" name="{{ form.weight.name }}">
+                    {% for error in form.weight.errors %}
+                        <p style="color:red;" class="text-center">{{ error }}</p>
+                    {% endfor %}
+                    <div class="text-center"><label class="form-label" for="{{ form.height.id_for_label }}">{{ form.height.label }}</label></div>
+                        <input class="form-control text-center mb-3" type="{{ form.height.field.widget.input_type }}" name="{{ form.height.name }}">
+                    {% for error in form.height.errors %}
+                        <p style="color:red;" class="text-center">{{ error }}</p>
+                    {% endfor %}
+                    <div class="text-center"><label class="form-label" for="{{ form.age.id_for_label }}">{{ form.age.label }}</label></div>
+                        <input class="form-control text-center mb-3" type="{{ form.age.field.widget.input_type }}" name="{{ form.age.name }}">
+                    {% for error in form.age.errors %}
+                        <p style="color:red;" class="text-center">{{ error }}</p>
+                    {% endfor %}
+                    <div class="d-grid gap-2 mb-3">{{ form.man_or_woman }}</div>
+                    <div class="d-grid gap-2 mb-3">{{ form.physical_activity }}</div>
+                    <div class="d-grid gap-2 mb-3">{{ form.surplus_deficit }}</div>
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% if total %}
+        <h2 class="mt-5 text-center">Ваш дневной рацион калорий должен составлять</h2>
+        <p style="font-weight: 700; font-size: larger;" class="mt-3 text-center">{{ total }} Калорий</p>
+    {% else %}
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+* {
+    font-family: 'Sofia Sans Condensed', sans-serif;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+body {
+    background-image: url('/static/images/1679537907_bogatyr-club-p-nochnoi-les-art-foni-krasivo-11.jpg');
+    background-size: cover;
+}
+
+/* Header */
+.navbar-r ul li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+}
+
+.navbar-r ul li a {
+    color: black;
+}
+
+.navbar-r ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.navbar-r ul li:hover::after {
+    width: 100%;
+}
+/* Header */
+
+/* About me */
+.about-me {
+    font-size: 22px;
+}
+/* About me */
+
+.Calc-form input {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+select {
+    background: rgba(0, 0, 0, 0.5);
+}
